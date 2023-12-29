@@ -4,6 +4,7 @@
   "description": "Snippets for questing work to speed up your workflow.",
   "version": "0.0.1",
   "license": "GPLv3",
+  "icon": "assets/icon.png",
   "publisher": "IrdaCraft",
   "repository": {
     "type": "git",
