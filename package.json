@@ -4,6 +4,7 @@
   "description": "Snippets for questing work to speed up your workflow.",
   "version": "0.0.1",
   "license": "GPLv3",
+  "publisher": "IrdaCraft",
   "repository": {
     "type": "git",
     "url": "https://github.com/BetonQuest/betonquest-code-snippets/"
