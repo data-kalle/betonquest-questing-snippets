@@ -1,0 +1,25 @@
+{
+  "name": "betonquest-questing-snippets",
+  "displayName": "BetonQuest Questing Snippets",
+  "description": "Snippets for questing work to speed up your workflow.",
+  "version": "0.0.1",
+  "license": "GPLv3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BetonQuest/betonquest-code-snippets/"
+  },
+  "engines": {
+    "vscode": "^1.54.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "yaml",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}

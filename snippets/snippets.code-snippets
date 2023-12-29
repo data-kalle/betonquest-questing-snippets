@@ -1,0 +1,401 @@
+{
+  "setupCleanQuest": {
+    "prefix": "setupCleanQuest",
+    "description": "Setup a new quest without helper comments",
+    "body": [
+      "",
+      "",
+      "# Quest Name: $1",
+      "# Description: $2",
+      "# Made by: $3",
+      "npcs:",
+      "  $4",
+      "  ",
+      "items:",
+      "  $5",
+      "  ",
+      "events:",
+      "  $6",
+      "  ",
+      "objectives:",
+      "  $7",
+      "  ",
+      "conditions:",
+      "  $8",
+      "  ",
+      "conversations:",
+      "  $9",
+      "$0",
+      ""
+    ]
+  },
+  "defQuestItem": {
+    "prefix": "defQuestItem",
+    "description": "Items: Define a quest item.",
+    "body": [
+      "${1:name}: \"${2:ITEM} name:&f${3:display_name} lore:$4;&2Quest_Item\"",
+      ""
+    ]
+  },
+  "defItem": {
+    "prefix": "defItem",
+    "description": "Items: Define a regular item.",
+    "body": [
+      "${1:name}: \"${2:ITEM} name:&f${3:display_name} lore:$4\""
+    ]
+  },
+  "defFolder": {
+    "prefix": "defFolder",
+    "body": [
+      "",
+      "",
+      "",
+      "${1:name}: \"",
+      "  folder ${2:firstEvent},\\",
+      "  ${3:secondEvent},\\",
+      "  ${4:etc},\\",
+      "  ${5:lastEvent}\""
+    ],
+    "description": "Events: Create folder event."
+  },
+  "addTag": {
+    "prefix": "addTag",
+    "body": [
+      "addTag_${1:name}: \"tag add ${1:name}\""
+    ],
+    "description": "Events: Add a tag to the player."
+  },
+  "delTag": {
+    "prefix": "delTag",
+    "description": "Events: Delete a tag from the player.",
+    "body": [
+      "delTag_${1:name}: \"tag delete ${1:name}\""
+    ]
+  },
+  "narrate": {
+    "prefix": "narrate",
+    "description": "Events: Print narrator text in the chat.",
+    "body": [
+      "narrate_${1:name}: \"notify §o§6${2:text.} io:chat\"",
+      ""
+    ]
+  },
+  "inspect": {
+    "prefix": "inspect",
+    "description": "Events: Print text in the action bar.",
+    "body": [
+      "inspect_${1:name}: \"notify §f${2:Text} io:actionbar\""
+    ]
+  },
+  "playSound": {
+    "prefix": "playSound",
+    "description": "Events: Play a sound to the player.",
+    "body": [
+      "playSound_${1:name}: \"notify sound:${2:namespace:soundName} soundplayeroffset:(${3:0;0;0}) soundvolume:${4:1}\""
+    ]
+  },
+  "addItem": {
+    "prefix": "addItem",
+    "description": "Events: Give item(s) to the player.",
+    "body": [
+      "addItem_${1:name}: \"give ${2:itemName}:${3:amount}\""
+    ]
+  },
+  "delItem": {
+    "prefix": "delItem",
+    "body": [
+      "delItem_${1:name}: \"take ${2:itemName}:${3:amount}\""
+    ],
+    "description": "Events: Take item(s) from the player."
+  },
+  "showFakeblock": {
+    "prefix": "showFakeblock",
+    "description": "Events: Show a fakeblock region to the player.",
+    "body": [
+      "showFakeblock_${1:name}: \"fakeblock showgroup ${2:fakeblockRegion}\""
+    ]
+  },
+  "hideFakeblock": {
+    "prefix": "hideFakeblock",
+    "description": "Events: Hide a fakeblock region from the player.",
+    "body": [
+      "hideFakeblock_${1:name}: \"fakeblock hidegroup ${2:fakeblockRegion}\""
+    ]
+  },
+  "defPrompt": {
+    "prefix": "defPrompt",
+    "description": "Conversations: Define a new prompt",
+    "body": [
+      "",
+      "${1:promptName}:",
+      "  quester: \"${2:promptTitle}\"",
+      "  first: \"${3:prompt}\"",
+      "  NPC_options:",
+      "    ${3:prompt}:",
+      "      text: |-",
+      "        Confirm your choice?",
+      "      conditions: \"\"",
+      "      events:",
+      "      pointers: ${4:option},leave,confirm",
+      "    $7:",
+      "  player_options:",
+      "    ${4:option}:",
+      "      text: \"$5\"",
+      "      conditions:",
+      "      events: \"$6\"",
+      "      pointer: \"$7\"",
+      "    leave:",
+      "      text: \"Leave.\"",
+      "      events: \"\"",
+      "    confirm:",
+      "      text: \"Yes.\"",
+      "      conditions: \"\"",
+      "      events: \"$8\"",
+      "      pointer: \"\""
+    ]
+  },
+  "showPrompt": {
+    "prefix": "showPrompt",
+    "description": "Events: Show a prompt to the player.",
+    "body": [
+      "showPrompt_${1:promptName}: \"conversation ${1:promptName}\""
+    ]
+  },
+  "startConversation": {
+    "prefix": "startConversation",
+    "description": "Events: Start a conversation with a player.",
+    "body": [
+      "startConversation_${1:conversationName}: \"conversation ${1:conversationName}\""
+    ]
+  },
+  "giveEffect": {
+    "prefix": "giveEffect",
+    "body": [
+      "giveEffect_${1:name}: \"effect ${2:TYPE} ${3:seconds} ${4:amplifier} ${5:hidden} ${6:noicon}\""
+    ],
+    "description": "Event: Give an effect to the player."
+  },
+  "addPoint": {
+    "prefix": "addPoint",
+    "description": "Events: Add point(s) in a category.",
+    "body": [
+      "addPoint_${1:name}: \"point ${1:name} ${2:amount} action:add conditions:$3\"",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "subPoint": {
+    "prefix": "subPoint",
+    "description": "Subtract point(s) in a category.",
+    "body": [
+      "subPoint_${1:name}: \"point ${1:name} ${2:amount} action:subtract conditions:$3\"$0"
+    ]
+  },
+  "setPoint": {
+    "prefix": "setPoint",
+    "description": "Events: Set point(s) in a category to a value.",
+    "body": [
+      "setPoint_${1:name}: \"point ${1:name} ${2:value} action:set conditions:$3\"$0"
+    ]
+  },
+  "defObjective": {
+    "prefix": "defObjective",
+    "description": "Objectives: Define a new objective.",
+    "body": [
+      "${1:objectiveName}: \"${2:type} $3 conditions:${4:conditions} events:${5:events} ${6:cancel} ${7:persistent}\""
+    ]
+  },
+  "addObjective": {
+    "prefix": "addObjective",
+    "body": [
+      "addObjective_${1:name}: \"objective add ${1:name}\""
+    ],
+    "description": "Events: Add an objective to the player."
+  },
+  "delObjective": {
+    "prefix": "delObjective",
+    "body": [
+      "delObjective_${1:name}: \"objective remove ${1:name}\""
+    ],
+    "description": "Events: Delete an objective from the player."
+  },
+  "teleport": {
+    "prefix": "teleport",
+    "description": "Event: Teleport the player to a destination.",
+    "body": [
+      "teleport_${1:destination}: \"teleport ${2:x};${3:y};${4:z};${5:world};${6:0};${7:0}\""
+    ]
+  },
+  "objectiveLocation": {
+    "prefix": "objectiveLocation",
+    "description": "Define a location objective.",
+    "body": [
+      "${1:objectiveName}: \"location ${2:x};${3:y};${4:z};${5:world} ${6:radius} events:$7 conditions:$8\"$0",
+      ""
+    ]
+  },
+  "objectiveAction": {
+    "prefix": "objectiveAction",
+    "description": "Define an action objective.",
+    "body": [
+      "${1:objectiveName}: \"action ${2|RIGHT,LEFT,ANY|} ${3:BLOCK} ${4:range} events:$5 conditions:$6 ${7:cancel} ${8:persistent}\"$0"
+    ]
+  },
+  "objectiveDelay": {
+    "prefix": "objectiveDelay",
+    "description": "Define a delay objective.",
+    "body": [
+      "${1:objectiveName}: \"delay ${2:seconds} seconds interval:${3:ticks}\tevents:$4\"$0"
+    ]
+  },
+  "conditionTag": {
+    "prefix": "conditionTag",
+    "body": [
+      "${1:tagName}: \"tag ${1:tagName}\""
+    ],
+    "description": "Condition: Player has a specified tag."
+  },
+  "conditionHand": {
+    "prefix": "conditionHand",
+    "description": "Condition: Player holds a specified item.",
+    "body": [
+      "holding_${1:itemName}: \"hand ${1:itemName}\"",
+      "holding_${1:itemName}_offhand: \"hand ${1:itemName} offhand\"",
+      "holding_${1:itemName}_anyHand: \"or holding_${1:itemName},holding_${1:itemName}_offhand\""
+    ]
+  },
+  "conditionItem": {
+    "prefix": "conditionItem",
+    "description": "Condition: Player has specified item in inventory.",
+    "body": [
+      "has_${1:itemName}: \"item ${1:itemName}\""
+    ]
+  },
+  "conditionItemList": {
+    "prefix": "conditionItemList",
+    "description": "Condition: Player has all specified items in inventory.",
+    "body": [
+      "has_${1:Items}: \"item ${2:item:amount},${3:item2:amount},${4:item3:amount},$5\"$0",
+      ""
+    ]
+  },
+  "conditionLocation": {
+    "prefix": "conditionLocation",
+    "description": "Condition: Player is within specified area.",
+    "body": [
+      "within_${1:locationName}: \"location ${2:x};${3:y};${4:z};${5:world} ${6:radius}\"$0"
+    ]
+  },
+  "questInit": {
+    "prefix": "questInit",
+    "description": "Event: Quest initialization events.",
+    "body": [
+      "# | These events help setup the quest",
+      "questInit: \"folder addTag_questStarted,delTag_questcompleted,addObjectives,firstEvents\"",
+      "addTag_questStarted: tag add questStarted",
+      "delTag_questCompleted: tag delete questCompleted",
+      "addObjectives: \"",
+      "  folder addObjective_${1:firstObjective},\\",
+      "  addObjective_${2:secondObjective},\\",
+      "  addObjective_${3:lastObjective}\"",
+      "addObjective_${1:firstObjective}: objective add ${1:firstObjective}",
+      "addObjective_${2:secondObjective}: objective add ${2:secondObjective}",
+      "addObjective_${3:lastObjective}: objective add ${3:lastObjective}",
+      "",
+      "delObjective_${1:firstObjective}: objective remove ${1:firstObjective}",
+      "delObjective_${2:secondObjective}: objective remove ${2:secondObjective}",
+      "delObjective_${3:lastObjective}: objective remove ${3:lastObjective}",
+      "",
+      "firstEvents: \"",
+      "  folder ${4:firstEvent},\\",
+      "  ${5:secondEvent},\\",
+      "  ${6:lastEvent}\"",
+      "",
+      "# | End of init section",
+      "$0"
+    ]
+  },
+  "addelObjective": {
+    "prefix": "addelObjective",
+    "description": "Event: Add and delete objective event in one go!",
+    "body": [
+      "addObjective_${1:name}: \"objective add ${1:name}\"",
+      "",
+      "delObjective_${1:name}: \"objective remove ${1:name}\""
+    ]
+  },
+  "addelTag": {
+    "prefix": "addelTag",
+    "description": "Events: Add and delete tag event in one go!",
+    "body": [
+      "addTag_${1:name}: \"tag add ${1:name}\"",
+      "",
+      "delTag_${1:name}: \"tag delete ${1:name}\""
+    ]
+  },
+  "conversationPlayerOption": {
+    "prefix": "conversationPlayerOption",
+    "description": "Conversations: Define a player option.",
+    "body": [
+      "${1:replyName}:",
+      "  text: \"${2:Text}\"",
+      "  conditions: \"$3\"",
+      "  events: \"$4\"",
+      "  pointers: \"$5\"",
+      "$0",
+      ""
+    ]
+  },
+  "conversationNPCOption": {
+    "prefix": "conversationNPCOption",
+    "description": "Conversation: Define an NPC option.",
+    "body": [
+      "${1:replyName}:",
+      "  text: |-",
+      "    ${2:Text}",
+      "  conditions: \"$3\"",
+      "  events: \"$4\"",
+      "  pointers: \"$5\"",
+      "$0",
+      ""
+    ]
+  },
+  "defConversation": {
+    "prefix": "defConversation",
+    "description": "Conversations: Define a new conversation.",
+    "body": [
+      "",
+      "",
+      "${1:npcName}: ",
+      "  quester: ${2:displayName}",
+      "  first: ${3:firstOption}",
+      "  NPC_options:",
+      "    ${3:firstOption}:",
+      "      text: |-",
+      "        ${4:Text}",
+      "      conditions: \"\"",
+      "      events: \"\"",
+      "      pointers: ${5:playerOption},$6,leave",
+      "    ${8:npcReply}:",
+      "      text: |-",
+      "        $9",
+      "      conditions: \"\"",
+      "      events: \"\"",
+      "      pointers: \"\"",
+      "  player_options:",
+      "    ${5:playerOption}:",
+      "      text: \"${7:Text}\"",
+      "      conditions: \"\"",
+      "      events: \"\"",
+      "      pointer: ${8:npcReply}",
+      "    $6:",
+      "    leave:",
+      "      text: \"[Leave]\"",
+      "      events: \"\""
+    ]
+  }
+}
